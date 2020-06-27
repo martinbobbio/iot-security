@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+    grafana:
+        container_name: iot_grafana
+        image: grafana/grafana:5.1.0
+        ports:
+        - 3000:3000
+        user: "104"
+        networks:
+            - net
+    backend:
+        container_name: iot_backend
+        build:
+            context: .
+            dockerfile: .dockerfile
+        ports:
+            - "8080:8080"
+        depends_on: 
+            - postgres
+        networks:
+            - net
+        environment:
+            - PORT=8080 
+            - HOST=backend
+            - ENV=docker
+            - DB_HOST=postgres
+    postgres:
+        image: postgres
+        container_name: iot_postgres
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_PASSWORD=admin
+        networks:
+            - net
+        volumes:
+            - iot-volume:/var/lib/postgres
+            - ./dbscripts/postgres:/docker-entrypoint-initdb.d
+volumes:
+    iot-volume:
+networks:
+    net:

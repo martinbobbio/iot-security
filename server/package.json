@@ -1,0 +1,33 @@
+{
+  "name": "tp-iot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./dist/index.js",
+    "dev": "nodemon -e ts --exec \"npm run start -s\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "cli-color": "^2.0.0",
+    "laabr": "^6.1.0",
+    "pg": "^8.2.1",
+    "sequelize": "^5.21.3",
+    "telegraf": "^3.38.0",
+    "telegrambot": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/cli-color": "^2.0.0",
+    "@types/hapi__hapi": "^19.0.2",
+    "@types/node": "^13.9.8",
+    "@types/bluebird": "^3.5.32",
+    "@types/validator": "^13.0.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3"
+  }
+}
