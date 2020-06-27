@@ -2,7 +2,7 @@
   <br>
   <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Logo-up.jpg" width="200">
   <br><br>
-  IOT - Sistema de seguridad
+  # IOT - Sistema de seguridad
   <br>
 </h1>
 
